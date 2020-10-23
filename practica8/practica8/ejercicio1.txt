@@ -1,0 +1,8 @@
+sum: x with:y 
+|result result2 result3|
+result := x+y.
+result2 := ((y*(y+1))/2).
+result3 := result2 - result.
+^ result3 
+
+	
