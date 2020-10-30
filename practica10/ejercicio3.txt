@@ -1,0 +1,18 @@
+dostres: numero
+|prime corre string1 string2|
+prime:=0.
+corre:=1.
+Transcript show: 'Los numeros que cumplen son: '.
+[prime<numero] whileTrue: [ 
+	((self primo: corre)=true) ifTrue: [ 
+		prime:=prime+1. 
+		string1:=self binario:corre.		
+		string2 := string1 reverse.
+		(string1=string2 )
+		ifTrue: [ 
+			Transcript show: corre  asString , ' : '.
+			Transcript show: string1, ' , '.
+		].
+	].
+	corre:=corre+1.
+].

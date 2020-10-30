@@ -3,20 +3,20 @@ dosbb: cantidaaad
 prime:=0.
 corre:=1.
 pivote:=0.
-Transcript show: 'Los numeros que cumplen son '.
+Transcript show: 'Los numeros que cumplen son: '.
 [prime>cantidaaad] whileFalse: [ 
 	noceros:=1.
 	((self primo: corre)=true) ifTrue: [ 
 		pivote:=pivote+1.
 		prime:=prime+1. 
 		auxiliar:=corre.
-		[auxiliar>=10] whileTrue: [ "Desintegración"
+		[auxiliar>10] whileTrue: [ "Desintegración"
 			noceros:=noceros*(auxiliar%10).
 			auxiliar:=auxiliar//10.
 		].
 		(auxiliar=0)ifFalse: [noceros:=auxiliar*noceros.].
 		(noceros=pivote)ifTrue:[
-			Transcript show: corre asString ,' '. "es el primo, noceros para la multi"
+			Transcript show: corre asString ,'-', noceros asString, ' , '. "es el primo, noceros para la multi"
 		].
 	].
 	corre:=corre+1.

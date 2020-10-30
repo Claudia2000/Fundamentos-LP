@@ -1,0 +1,16 @@
+dosuno: numero
+|prime corre string1|
+prime:=0.
+corre:=1.
+Transcript show: 'Los numeros que cumplen son: '.
+[prime<numero] whileTrue: [ 
+	((self primo: corre)=true) ifTrue: [ 
+		prime:=prime+1. 
+		string1:= corre asString reverse .
+		string1:= string1 asInteger .
+		((self primo: string1)=true) ifTrue:[
+			Transcript show: corre  asString , ' : ', string1 asString , ' , '.
+		].
+	].
+	corre:=corre+1.
+].

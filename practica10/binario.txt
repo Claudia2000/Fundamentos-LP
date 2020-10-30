@@ -1,0 +1,11 @@
+binario:numero
+|string1 aux|
+string1:=''.
+aux:=numero.
+[ aux>0 ] whileTrue: [ 
+		((aux%2)=0) 
+		ifTrue: [string1:='0',string1.]
+		ifFalse: [string1:='1',string1.].
+		aux:=aux//2		
+].
+^string1.
