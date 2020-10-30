@@ -1,0 +1,11 @@
+primo:x
+|variable1|
+variable1:=true.
+(x=0 | x=1)ifTrue: [ variable1:=false. ].
+(variable1=true)
+ifTrue: [ 
+	2 to: (x/2) do: [:i | 
+		((x%i)=0)ifTrue: [ variable1:=false. ].
+	].
+].
+^variable1.

@@ -1,0 +1,8 @@
+equis: x ye: y rad: r segx: x_ segy: y_  segrad: r_		
+| result1 sumrad |
+result1 := ((x-x_)*(x-x_))+((y-y_)*(y-y_)).
+sumrad := (r+r_)*(r+r_).
+
+(result1 > sumrad) 
+ifTrue: [ Transcript show: 'No se intersectan'. ] 
+ifFalse: [ Transcript show: 'Se intersectan'. ].
