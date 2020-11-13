@@ -1,0 +1,19 @@
+<html><body>
+<script>
+    function primos(numero)
+    {
+        var i = 2;
+	while (numero % i !== 0 && i < numero / 2 ) {
+	i++;
+	}
+	if (numero % i !== 0) {
+		return true;
+	} else {
+		return false;
+	}
+    }
+ 
+    document.write(primos(8));
+    
+</script></body>
+</html>
