@@ -1,0 +1,22 @@
+<html ><body >
+<script>
+
+function square(x){return (x*x);}
+function map_recursive (arr, f, mapita=[]){
+
+   if(arr.length>0){
+      	val=arr.shift();
+       	mapita.push(f(val));
+      	return map_recursive(arr,f,mapita);
+   }
+   return mapita;
+}
+
+result=map_recursive([1 ,2, 3, 4, 5],square);
+result2=map_recursive([1 , 4, 9 , 16 , 25],Math.sqrt);
+document.write("Result map_recursive :", result,"<br>");
+document.write("Result map_recursive :", result2 );
+
+</script>
+</body></html>
+

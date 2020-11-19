@@ -1,0 +1,16 @@
+<html><body>
+<script src ="ramda.min.js" > </script >
+<script>
+
+function square(x){return (x*x);}
+function double(x){return (x*2);}
+
+var f3 = R.compose ( square , double ) ;
+var f4 = R.compose ( double , square ) ;
+document.write("f3 (5) :", f3 (5), "<br>"); // 100
+document.write("f4 (5) :", f4 (5), "<br>"); // 50
+document.write("f3 (10) :", f3 (10), "<br>"); // 400
+document.write("f4 (10) :", f4 (10)); // 200
+
+</script></body>
+</html>

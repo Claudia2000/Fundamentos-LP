@@ -1,0 +1,21 @@
+<html><body>
+<script>
+
+function isEven ( num ) { return ( num %2 == 0) ; }	
+function find_recursive (arr,f,iter = 0,findit=[]){
+
+   //let len = 0;
+   if(iter < arr.length){
+      	if(f(arr[iter])==true){
+       		findit.push(arr[iter]);
+   	};
+	
+      	return find_recursive(arr,f, ++iter, findit);
+   };
+   return findit;
+};
+
+document.write("Find result: ",find_recursive([1, 3, 5, 4, 2],isEven));
+
+</script>
+</body></html>
