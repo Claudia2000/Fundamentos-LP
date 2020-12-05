@@ -1,0 +1,19 @@
+<html><body>
+<script>
+
+function joinWords(string) {
+	return function(nextString) {
+		if (nextString === undefined) {
+      		return string;
+    		} else {
+      		return joinWords(string + nextString);
+    		}
+  	}
+}
+
+document.write(joinWords ('Hello')()); // Hello
+document.write("<br>");
+document.write (joinWords ('There ')('is ')('no ')('spoon.')());
+
+</script> </body> 
+</html>

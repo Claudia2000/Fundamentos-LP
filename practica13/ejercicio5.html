@@ -1,0 +1,24 @@
+<html><body>
+<script>
+
+var total = 0;
+var delayInvoc = function (a) {
+    total += a;
+    return function(a){
+        total += a;
+        return function(a){
+                total += a
+                return total;
+
+        }
+    }
+    
+};
+delayInvoc (4) (5);
+document.write( total ); //9
+document.write("<br>");
+delayInvoc (4) (5) (8);
+document.write( total ); // 26
+
+</script> </body> 
+</html>

@@ -1,0 +1,14 @@
+<html><body>
+<script>
+
+function diHola() {
+   return "Hola ";
+}
+function saludar(saludo, nombre) {
+  document.write(saludo() + nombre);
+}
+// Pasamos `diHola` como argumento de la función `saludar`
+saludar(diHola, "JavaScript!");
+
+</script></body>
+</html>
