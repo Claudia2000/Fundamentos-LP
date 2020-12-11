@@ -1,0 +1,30 @@
+<html><body>
+<script>
+
+function memoization(fun) {
+  let arr = {};
+  return function(value) {    
+    if (value in arr) {
+      return arr[value];
+    }
+    else {
+      let result = fun(value);
+      arr[value] = result;
+      return result;
+    }
+  }
+}
+
+var factorial = function(number) {
+  if (number <= 0) { 
+    return 1;
+  } else { 
+    return (number * factorial(number - 1));
+  }
+}
+
+factorial = memoization(factorial);
+document.write(factorial(5));
+
+</script></body>
+</html>

@@ -1,0 +1,46 @@
+<html><body>
+<script>
+
+function factorial (n,memo=[]) {
+	if (!memo[n]) {
+		memo[n] = 1; 
+		for (i=1; i<=n; i++) {
+			memo[n] = memo[n] * i; 
+		}
+	}
+	return memo[n]; 
+}
+
+function Seno(x,acumulador,n=1,suma_resta=0){
+	if(n>80){
+		return acumulador;
+	}		
+	if (suma_resta%2===0){
+		acumulador=Math.pow(x,n)/factorial(n);	
+		acumulador=acumulador*1;
+	}
+	else{
+		acumulador=Math.pow(x,n)/factorial(n);
+		acumulador=acumulador*(-1);
+	}
+	return acumulador+Seno(x,acumulador,n+2,suma_resta+1);
+}
+
+function Coseno(x,acumulador,n=0,suma_resta=0){
+	if(n>80){
+		return acumulador;
+	}		
+	if (suma_resta%2===0){
+		acumulador=Math.pow(x,n)/factorial(n);	
+		acumulador=acumulador*1;
+	}
+	else{
+		acumulador=Math.pow(x,n)/factorial(n);
+		acumulador=acumulador*(-1);
+	}
+	return acumulador+Seno(x,acumulador,n+2,suma_resta+1);
+}
+document.write('Seno de 90: ',Seno(90),"<br>");
+document.write('Coseno de 90: ',Coseno(90));
+</script></body>
+</html>
